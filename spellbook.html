@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Spellbook · Type Hierarchy 2</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
+  <style>
+  /* ---- Custom CSS: overrides Bootstrap's default type hierarchy ----
+     Modular scale: Major Third (1.25), base 18px = 1rem
+     H4 = base × 1.25^1, H3 = ^2, H2 = ^3, H1 = ^4 */
+  :root{--bg:#f3ead6;--panel:#fbf6ea;--ink:#2a1c12;--muted:#6d5844;--rubric:#8e2a1e;--gold:#a7792c;--line:#d9c7a4;}
+  html{font-size:18px}
+  body{background:var(--bg);color:var(--ink);font-family:'Texturina',Georgia,serif;font-weight:400;font-size:1rem;line-height:1.65;font-optical-sizing:auto}
+  h1,h2,h3,h4{font-family:'Texturina',serif;color:var(--ink);margin-bottom:.4rem;line-height:1.15}
+  h1{font-weight:800;font-size:2.441rem}
+  h2{font-weight:700;font-size:1.953rem;color:var(--rubric)}
+  h3{font-weight:600;font-size:1.563rem}
+  h4{font-weight:500;font-style:italic;font-size:1.25rem;color:var(--rubric)}
+  em,.emphasis{font-style:italic;font-weight:500;color:var(--rubric)}
+  a{font-weight:600;color:var(--rubric);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:.2em}
+  a:hover{color:var(--gold)}
+  .hero-title{font-family:'Texturina',serif;font-weight:900;font-size:3.815rem;line-height:1;color:var(--rubric)}
+  .card-spec{background:var(--panel);border:1px solid var(--line)}
+  .specimen:first-child p::first-letter{float:left;font-size:3.1em;line-height:.85;font-weight:800;color:var(--rubric);margin:.08em .1em 0 0}
+  .spec{color:var(--muted)} .badge-spec{background:#efe2c4;color:var(--rubric);border:1px solid var(--line)}
+  .table{--bs-table-bg:transparent;--bs-table-color:var(--ink);--bs-table-border-color:var(--line)}
+
+  .navbar-brand,.nav-link{font-size:1rem;color:var(--muted)!important;text-decoration:none}
+  .navbar-brand{color:var(--ink)!important}
+  .nav-link.active,.nav-link:hover,.navbar-brand:hover{color:var(--ink)!important;text-decoration:underline}
+  .navbar a::after{content:none!important}
+  .card-spec{border-radius:.75rem;padding:2rem}
+  .spec{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.72rem;letter-spacing:.02em}
+  .badge-spec{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:500;font-size:.7rem;padding:.35em .6em;border-radius:.4rem;display:inline-block;margin-bottom:.6rem}
+  .table td,.table th{font-size:.85rem;vertical-align:middle}
+  .specimen + .specimen{margin-top:2.5rem}
+  @media (max-width:576px){ html{font-size:14px} .card-spec{padding:1.25rem} }
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand py-3">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">← All hierarchies</a>
+      <ul class="navbar-nav ms-auto flex-wrap"><li class="nav-item"><a class="nav-link" href="pixel-dungeon.html">Pixel Dungeon</a></li><li class="nav-item"><a class="nav-link active" href="spellbook.html">The Spellbook</a></li><li class="nav-item"><a class="nav-link" href="insert-coin.html">Insert Coin</a></li></ul>
+    </div>
+  </nav>
+  <header class="container py-4 py-md-5">
+    <p class="spec mb-2">TYPE HIERARCHY 2 · ONE TYPEFACE (VARIABLE)</p>
+    <div class="hero-title mb-3">The Spellbook</div>
+    <p class="lead" style="max-width:44rem">An illuminated wizard&#x27;s grimoire set entirely in Texturina, a variable textura-inspired serif.</p>
+  </header>
+  <main class="container pb-5">
+    <div class="card-spec mb-4">
+      <h4 class="mb-2">The scale</h4>
+      <p class="mb-3">Typefaces: <strong>Texturina (variable: weight 100–900, optical size 12–72, italic)</strong>. Modular scale: <strong>Major Third (1.25)</strong> with a 18px base.</p>
+      <div class="table-responsive">
+        <table class="table mb-0">
+          <thead><tr><th>Element</th><th>Typeface</th><th>Weight / style</th><th>Formula</th><th>Size</th><th>rem</th></tr></thead>
+          <tbody><tr><td>Heading 1</td><td>Texturina</td><td>800</td><td>18 × 1.25<sup>4</sup></td><td>43.94px</td><td>2.441rem</td></tr><tr><td>Heading 2</td><td>Texturina</td><td>700</td><td>18 × 1.25<sup>3</sup></td><td>35.15px</td><td>1.953rem</td></tr><tr><td>Heading 3</td><td>Texturina</td><td>600</td><td>18 × 1.25<sup>2</sup></td><td>28.13px</td><td>1.563rem</td></tr><tr><td>Heading 4</td><td>Texturina</td><td>500 italic</td><td>18 × 1.25<sup>1</sup></td><td>22.50px</td><td>1.25rem</td></tr><tr><td>Emphasis</td><td>Texturina</td><td>500 italic</td><td>18 × 1.25<sup>0</sup></td><td>18.00px</td><td>1.0rem</td></tr><tr><td>Body</td><td>Texturina</td><td>400</td><td>18 × 1.25<sup>0</sup></td><td>18.00px</td><td>1.0rem</td></tr><tr><td>Link</td><td>Texturina</td><td>600 + underline</td><td>18 × 1.25<sup>0</sup></td><td>18.00px</td><td>1.0rem</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card-spec">
+      <section class="specimen">
+        <span class="badge-spec">H1 · Texturina 800 · 43.94px / 2.441rem</span>
+        <h1>The Grimoire of Ash</h1>
+        <p>Bound in cracked leather and smelling faintly of smoke, this book has passed through the hands of eleven wizards. Each one added notes in the margins, and at least two of them were not entirely human.</p>
+      </section>
+      <section class="specimen">
+        <span class="badge-spec">H2 · Texturina 700 · 35.15px / 1.953rem</span>
+        <h2>Chapter I: Minor Cantrips</h2>
+        <p>Begin with small magic. A cantrip asks for little more than a steady voice, a clear mind and the right flick of the wrist. Mastering the small spells first keeps the large ones from mastering you.</p>
+      </section>
+      <section class="specimen">
+        <span class="badge-spec">H3 · Texturina 600 · 28.13px / 1.563rem</span>
+        <h3>On the Lighting of Candles</h3>
+        <p>Speak the word for flame while picturing the wick, not the fire. Apprentices who picture the fire tend to light the curtains, the cat and occasionally their own eyebrows.</p>
+      </section>
+      <section class="specimen">
+        <span class="badge-spec">H4 · Texturina 500 italic · 22.50px / 1.25rem</span>
+        <h4>A Warning to Apprentices</h4>
+        <p>Do not read the final page aloud. The last apprentice who tried is now a very well-spoken frog living in the courtyard fountain, and he would like you to learn from his mistake.</p>
+      </section>
+      <section class="specimen">
+        <span class="badge-spec">EMPHASIS · Texturina 500 italic · 18.00px / 1rem</span>
+        <p><em>Words have weight; spoken spells weigh most of all.</em> The emphasis style sits inside body copy, so it keeps the body size and changes only weight, style and color.</p>
+      </section>
+      <section class="specimen">
+        <span class="badge-spec">BODY · Texturina 400 · 18.00px / 1rem · line-height 1.6</span>
+        <p>Body text is the base of the scale (ratio<sup>0</sup>). Every heading size above is this size multiplied by 1.25 one or more times, which is why the jumps between levels feel even and intentional rather than random.</p>
+      </section>
+      <section class="specimen">
+        <span class="badge-spec">LINK · Texturina 600 + underline · 18.00px / 1rem</span>
+        <p>Links stay at body size so they sit naturally in a sentence: <a href="index.html">Turn to the next chapter</a>.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="container pb-5 spec">Kaelyn Ellison · HCI 430 · Type Hierarchies · Fonts from Google Fonts · Built with Bootstrap 5</footer>
+</body>
+</html>

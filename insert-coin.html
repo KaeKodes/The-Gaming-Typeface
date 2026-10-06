@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Insert Coin · Type Hierarchy 3</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+  /* ---- Custom CSS: overrides Bootstrap's default type hierarchy ----
+     Modular scale: Augmented Fourth (1.414), base 16px = 1rem
+     H4 = base × 1.414^1, H3 = ^2, H2 = ^3, H1 = ^4 */
+  :root{--bg:#0b0b16;--panel:#141428;--ink:#e9e9f4;--muted:#a3a3c2;--yellow:#ffd23f;--cyan:#3ee8f2;--pink:#ff4fa3;--line:#2a2a4d;}
+  html{font-size:16px}
+  body{background-color:var(--bg);background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px);
+       color:var(--ink);font-family:'Pixelify Sans',monospace;font-weight:400;font-size:1rem;line-height:1.6}
+  h1,h2{font-family:'Press Start 2P',monospace;font-weight:400;line-height:1.35;margin-bottom:.6rem}
+  h1{font-size:4rem;color:var(--yellow);text-shadow:4px 4px 0 var(--pink)}
+  h2{font-size:2.828rem;color:var(--cyan);text-shadow:3px 3px 0 #1d4a8f}
+  h3{font-family:'Pixelify Sans',monospace;font-weight:700;font-size:2rem;color:var(--pink);line-height:1.2}
+  h4{font-family:'Pixelify Sans',monospace;font-weight:600;font-size:1.414rem;color:var(--yellow);line-height:1.2}
+  em,.emphasis{font-style:normal;font-weight:700;color:var(--yellow)}
+  a{font-weight:500;color:var(--cyan);text-decoration:underline;text-underline-offset:.25em}
+  a:hover{color:var(--pink)}
+  a::after{content:'_';animation:blink 1s steps(1) infinite;text-decoration:none;display:inline-block;margin-left:.15em}
+  @keyframes blink{50%{opacity:0}}
+  .hero-title{font-family:'Press Start 2P',monospace;font-size:2.828rem;line-height:1.3;color:var(--yellow);text-shadow:4px 4px 0 var(--pink)}
+  .card-spec{background:var(--panel);border:2px solid var(--line)}
+  .spec{color:var(--muted)} .badge-spec{background:#1d1d3a;color:var(--cyan);border:1px solid var(--line)}
+  .table{--bs-table-bg:transparent;--bs-table-color:var(--ink);--bs-table-border-color:var(--line)}
+
+  .navbar-brand,.nav-link{font-size:1rem;color:var(--muted)!important;text-decoration:none}
+  .navbar-brand{color:var(--ink)!important}
+  .nav-link.active,.nav-link:hover,.navbar-brand:hover{color:var(--ink)!important;text-decoration:underline}
+  .navbar a::after{content:none!important}
+  .card-spec{border-radius:.75rem;padding:2rem}
+  .spec{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.72rem;letter-spacing:.02em}
+  .badge-spec{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:500;font-size:.7rem;padding:.35em .6em;border-radius:.4rem;display:inline-block;margin-bottom:.6rem}
+  .table td,.table th{font-size:.85rem;vertical-align:middle}
+  .specimen + .specimen{margin-top:2.5rem}
+  @media (max-width:576px){ html{font-size:14px} .card-spec{padding:1.25rem} }
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand py-3">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">← All hierarchies</a>
+      <ul class="navbar-nav ms-auto flex-wrap"><li class="nav-item"><a class="nav-link" href="pixel-dungeon.html">Pixel Dungeon</a></li><li class="nav-item"><a class="nav-link" href="spellbook.html">The Spellbook</a></li><li class="nav-item"><a class="nav-link active" href="insert-coin.html">Insert Coin</a></li></ul>
+    </div>
+  </nav>
+  <header class="container py-4 py-md-5">
+    <p class="spec mb-2">TYPE HIERARCHY 3 · TWO TYPEFACES (MY CHOICE)</p>
+    <div class="hero-title mb-3">INSERT COIN</div>
+    <p class="lead" style="max-width:44rem">A 1980s arcade cabinet: Press Start 2P on the marquee, variable Pixelify Sans for everything you read.</p>
+  </header>
+  <main class="container pb-5">
+    <div class="card-spec mb-4">
+      <h4 class="mb-2">The scale</h4>
+      <p class="mb-3">Typefaces: <strong>Press Start 2P + Pixelify Sans (variable)</strong>. Modular scale: <strong>Augmented Fourth (1.414)</strong> with a 16px base.</p>
+      <div class="table-responsive">
+        <table class="table mb-0">
+          <thead><tr><th>Element</th><th>Typeface</th><th>Weight / style</th><th>Formula</th><th>Size</th><th>rem</th></tr></thead>
+          <tbody><tr><td>Heading 1</td><td>Press Start 2P</td><td>400</td><td>16 × 1.414<sup>4</sup></td><td>64.00px</td><td>4.0rem</td></tr><tr><td>Heading 2</td><td>Press Start 2P</td><td>400</td><td>16 × 1.414<sup>3</sup></td><td>45.25px</td><td>2.828rem</td></tr><tr><td>Heading 3</td><td>Pixelify Sans</td><td>700</td><td>16 × 1.414<sup>2</sup></td><td>32.00px</td><td>2.0rem</td></tr><tr><td>Heading 4</td><td>Pixelify Sans</td><td>600</td><td>16 × 1.414<sup>1</sup></td><td>22.62px</td><td>1.414rem</td></tr><tr><td>Emphasis</td><td>Pixelify Sans</td><td>700</td><td>16 × 1.414<sup>0</sup></td><td>16.00px</td><td>1.0rem</td></tr><tr><td>Body</td><td>Pixelify Sans</td><td>400</td><td>16 × 1.414<sup>0</sup></td><td>16.00px</td><td>1.0rem</td></tr><tr><td>Link</td><td>Pixelify Sans</td><td>500 + underline</td><td>16 × 1.414<sup>0</sup></td><td>16.00px</td><td>1.0rem</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card-spec">
+      <section class="specimen">
+        <span class="badge-spec">H1 · Press Start 2P 400 · 64.00px / 4.0rem</span>
+        <h1>GAME ON</h1>
+        <p>The cabinet hums to life with a burst of static and an eight-note fanfare. A quarter clinks into the slot, the high score table scrolls away, and the screen asks the only question that matters.</p>
+      </section>
+      <section class="specimen">
+        <span class="badge-spec">H2 · Press Start 2P 400 · 45.25px / 2.828rem</span>
+        <h2>LEVEL 2</h2>
+        <p>The dungeon gets faster, the music gets louder and the bats start moving in patterns you swear were not there a minute ago. Your knight has three hearts left and a sword that only swings to the right.</p>
+      </section>
+      <section class="specimen">
+        <span class="badge-spec">H3 · Pixelify Sans 700 · 32.00px / 2.0rem</span>
+        <h3>Boss Fight: The Lich King</h3>
+        <p>He floats at the top of the screen, crown flickering, raining fireballs in a spread of five. Learn the gap in his pattern, dash in on the third beat and strike while his shield is down.</p>
+      </section>
+      <section class="specimen">
+        <span class="badge-spec">H4 · Pixelify Sans 600 · 22.62px / 1.414rem</span>
+        <h4>Extra Life Unlocked</h4>
+        <p>A green mushroom bounces off the wall and into your hands. The counter ticks up to four, a chime plays and for one glorious second you feel absolutely unstoppable.</p>
+      </section>
+      <section class="specimen">
+        <span class="badge-spec">EMPHASIS · Pixelify Sans 700 · 16.00px / 1rem</span>
+        <p><em>HIGH SCORE: 999,990. Enter your initials.</em> The emphasis style sits inside body copy, so it keeps the body size and changes only weight, style and color.</p>
+      </section>
+      <section class="specimen">
+        <span class="badge-spec">BODY · Pixelify Sans 400 · 16.00px / 1rem · line-height 1.6</span>
+        <p>Body text is the base of the scale (ratio<sup>0</sup>). Every heading size above is this size multiplied by 1.414 one or more times, which is why the jumps between levels feel even and intentional rather than random.</p>
+      </section>
+      <section class="specimen">
+        <span class="badge-spec">LINK · Pixelify Sans 500 + underline · 16.00px / 1rem</span>
+        <p>Links stay at body size so they sit naturally in a sentence: <a href="index.html">Continue? Insert another coin</a>.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="container pb-5 spec">Kaelyn Ellison · HCI 430 · Type Hierarchies · Fonts from Google Fonts · Built with Bootstrap 5</footer>
+</body>
+</html>
